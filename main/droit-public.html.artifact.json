@@ -1,0 +1,19 @@
+{
+  "version": 1,
+  "kind": "html",
+  "title": "droit-public.html",
+  "entry": "droit-public.html",
+  "renderer": "html",
+  "status": "complete",
+  "exports": [
+    "html",
+    "pdf",
+    "zip"
+  ],
+  "createdAt": "2026-06-20T08:33:24.910Z",
+  "updatedAt": "2026-06-22T08:02:50.583Z",
+  "metadata": {
+    "inferred": true,
+    "reconciled": true
+  }
+}

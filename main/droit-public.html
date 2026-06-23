@@ -1,0 +1,646 @@
+<!doctype html>
+<html lang="fr"><head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Droit public · François-Xavier Cornuot</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400;1,600&amp;family=Source+Sans+3:wght@300;400;600;700&amp;display=swap" rel="stylesheet">
+  
+  <style>
+    :root {
+      --bg:      #FAFAF8;
+      --surface: #F5F2EC;
+      --fg:      #2C2C2C;
+      --muted:   #7A7A7A;
+      --border:  #D8D3CA;
+      --accent:  #C8A45D;
+
+      --marine-deep: #0D1B3E;
+      --marine:      #1B2F5C;
+      --marine-mid:  #243F7A;
+      --gold-light:  #DFC08A;
+      --cream:       #EDE8DF;
+      --text-light:  #4A4A4A;
+      --white:      #FAFAF8;
+
+      --font-display: 'Playfair Display', 'Iowan Old Style', Georgia, serif;
+      --font-body:    'Source Sans 3', -apple-system, BlinkMacSystemFont, 'Segoe UI', system-ui, sans-serif;
+      --font-mono:    ui-monospace, 'JetBrains Mono', 'SF Mono', Menlo, monospace;
+
+      --fs-h1: clamp(36px, 5vw, 64px);
+      --fs-h2: clamp(28px, 3.6vw, 42px);
+      --fs-h3: 22px;
+      --fs-lead: 18px;
+      --fs-body: 16px;
+      --fs-meta: 13px;
+
+      --gap-xs: 8px;
+      --gap-sm: 14px;
+      --gap-md: 24px;
+      --gap-lg: 36px;
+      --gap-xl: 64px;
+      --gap-2xl: 100px;
+      --container: 1120px;
+      --gutter: 40px;
+
+      --radius: 2px;
+      --radius-lg: 2px;
+    }
+
+    *, *::before, *::after { box-sizing: border-box; }
+    html { scroll-behavior: smooth; -webkit-text-size-adjust: 100%; }
+    body {
+      margin: 0;
+      background: var(--bg);
+      color: var(--fg);
+      font-family: var(--font-body);
+      font-size: var(--fs-body);
+      line-height: 1.7;
+      text-rendering: optimizeLegibility;
+      -webkit-font-smoothing: antialiased;
+    }
+    img, svg { display: block; max-width: 100%; }
+    a { color: inherit; text-decoration: none; }
+    button { font: inherit; cursor: pointer; }
+    p { text-wrap: pretty; }
+    h1, h2, h3, h4 { text-wrap: balance; }
+
+    .container {
+      max-width: var(--container);
+      margin-inline: auto;
+      padding-inline: var(--gutter);
+    }
+
+    .topnav {
+      position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+      background: transparent;
+      transition: background .3s, border-color .3s;
+    }
+    .topnav.scrolled {
+      background: var(--marine-deep);
+      border-bottom: 1px solid rgba(200,164,93,.2);
+    }
+    .topnav-inner {
+      display: flex; align-items: center;
+      padding-block: 0; height: 100px;
+    }
+    .topnav .logo {
+      display: flex; align-items: center; line-height: 0; margin-right: auto;
+    }
+    .topnav .logo img {
+      height: 100px; width: 100px;
+    }
+    .topnav-right {
+      display: flex; align-items: center; gap: 24px;
+    }
+    .topnav nav { display: flex; gap: 4px; }
+    .topnav nav a {
+      font-size: 16px; font-weight: 400;
+      letter-spacing: 0.08em; text-transform: uppercase;
+      color: #FFFFFF;
+      padding: 6px 14px;
+      border-radius: var(--radius);
+      transition: color .2s, background .2s;
+    }
+    .topnav nav a:hover { color: var(--accent); background: rgba(200,164,93,.08); }
+    .topnav .btn {
+      font-size: 11px; font-weight: 600;
+      letter-spacing: 0.1em; text-transform: uppercase;
+      padding: 8px 18px;
+    }
+    @media (max-width: 720px) {
+      .topnav nav { display: none; }
+      .topnav .btn { font-size: 10px; padding: 6px 12px; }
+    }
+
+    .btn {
+      display: inline-flex; align-items: center; gap: 8px;
+      padding: 12px 24px;
+      border-radius: var(--radius);
+      border: 1px solid transparent;
+      font-size: 13px;
+      font-weight: 600;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      transition: opacity .2s, background .2s, border-color .2s;
+    }
+    .btn-primary {
+      background: var(--accent);
+      color: var(--marine-deep);
+      border-color: var(--accent);
+    }
+    .btn-primary:hover { opacity: .88; }
+
+    .hero-light {
+      background: var(--cream);
+      color: var(--white);
+      padding-block: clamp(80px, 12vw, 160px);
+      padding-top: calc(clamp(80px, 12vw, 160px) + 64px);
+      padding-bottom: 80px;
+      position: relative;
+      overflow: visible;
+    }
+    .hero-slider {
+      position: absolute;
+      inset: 0;
+      z-index: 0;
+      overflow: hidden;
+    }
+    .hero-slider img {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center;
+      opacity: 0;
+      transition: opacity 1.5s ease;
+    }
+    .hero-slider img.active {
+      opacity: 1;
+    }
+    .hero-dots {
+      position: absolute;
+      right: 40px;
+      top: 50%;
+      transform: translateY(-50%);
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+      z-index: 30;
+    }
+    .hero-dot {
+      width: 10px;
+      height: 10px;
+      border-radius: 50%;
+      border: 1.5px solid #C9A15A;
+      background: transparent;
+      cursor: pointer;
+      transition: background 0.3s ease, border-color 0.3s ease;
+      padding: 0;
+    }
+    .hero-dot.active {
+      background: #C9A15A;
+    }
+    .hero-logo-fullwidth {
+      position: relative;
+      z-index: 2;
+      width: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 40px 0 80px;
+    }
+    .hero-logo-wrap {
+      text-align: center;
+    }
+    .hero-logo-wrap img {
+      height: 280px;
+      width: 280px;
+      display: inline-block;
+    }
+    .hero-light::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: rgba(13,27,62,0.57);
+      pointer-events: none;
+      z-index: 1;
+    }
+    .hero-light .container {
+      position: relative;
+      z-index: 2;
+    }
+    .hero-text-area {
+      position: relative;
+      z-index: 1;
+    }
+    .hero-text-content {
+      position: relative;
+      padding-left: 28px;
+    }
+    .hero-text-content::before {
+      content: '';
+      position: absolute;
+      left: 0;
+      top: 50%;
+      transform: translateY(-50%);
+      width: 2px;
+      height: 185px;
+      background: var(--accent);
+    }
+    .hero-title {
+      margin: 0;
+    }
+    .hero-title-line {
+      display: block;
+      font-family: var(--font-display);
+      font-size: var(--fs-h1);
+      line-height: 1.15;
+      letter-spacing: 0.02em;
+      font-weight: 400;
+      color: var(--white);
+    }
+    .hero-title-line .big-punct {
+      font-size: 1.45em;
+      font-weight: 700;
+      color: #0D1B3E;
+      line-height: 0;
+      position: relative;
+      top: 0.05em;
+    }
+    .hero-subtitle {
+      font-family: var(--font-body);
+      font-size: var(--fs-lead);
+      line-height: 1.65;
+      color: rgba(255,255,255,.65);
+      font-weight: 300;
+      max-width: none;
+      margin: 16px 0 0;
+    }
+    .hero-cta {
+      display: flex; gap: var(--gap-sm); flex-wrap: wrap;
+      margin-top: 36px;
+      position: relative;
+      z-index: 1;
+      padding-left: 28px;
+    }
+    .hero-light .btn-outline {
+      color: var(--white);
+      border-color: rgba(255,255,255,.3);
+    }
+    .hero-light .btn-outline:hover {
+      border-color: var(--accent);
+      color: var(--accent);
+    }
+
+    @media (max-width: 720px) {
+      .hero-text-content { padding-left: 18px; }
+      .hero-text-content::before { width: 1px; }
+      .hero-cta { padding-left: 18px; }
+    }
+  </style>
+</head>
+<body>
+  <header class="topnav" id="topnav" data-od-id="topnav">
+    <div class="container topnav-inner">
+      <a href="fxcornuot-avocat.html" class="logo">
+        <img src="mqccb7gi-LOGO-officiel-_1_.webp" alt="François-Xavier Cornuot" style="height: 80px; width: 80px;">
+      </a>
+      <div class="topnav-right">
+        <nav>
+          <a href="fxcornuot-avocat.html#about" style="font-size: 14px; text-align: center;">À PROPOS</a>
+          <a href="fxcornuot-avocat.html#expertise" style="font-size: 14px;">EXPERTISE</a>
+          <a href="fxcornuot-avocat.html#actualites" style="font-size: 14px;">ACTUALITÉS</a>
+          <a href="fxcornuot-avocat.html#process-section" style="font-size: 14px;">COMMENT ÇA MARCHE ?</a>
+          <a href="fxcornuot-avocat.html#faq" style="font-size: 14px;">FAQ</a>
+        </nav>
+        <a href="fxcornuot-avocat.html#contact" class="btn btn-primary" style="font-size: 14px;">Contact</a>
+      </div>
+    </div>
+  </header>
+
+  <main id="content">
+    <section class="hero-light" data-od-id="hero">
+      <div class="hero-slider">
+        <img src="mqcboi5e-dddddddddg_0_0.jpg-_1_.webp" alt="" class="active" data-slide="0">
+        <img src="mqhr1rs5-Domaine-des-sceaux-.jpg" alt="" data-slide="1">
+        <img src="mqj6qzb9-Page-sec-_1_.png" alt="" data-slide="2" style="height: 704.8px;">
+      </div>
+      <div class="hero-logo-fullwidth" style="justify-content: center; align-items: center; padding-top: 0px;">
+        <div class="hero-logo-wrap">
+          <img src="mqccb7gi-LOGO-officiel-_1_.webp" alt="François-Xavier Cornuot">
+        </div>
+      </div>
+      <div class="hero-dots" id="hero-dots"></div>
+    </section>
+
+    <section class="cards-section" data-od-id="cards" style="height: 350px;">
+      <div class="container cards-grid-wrap">
+        <div class="cards-grid">
+          <!-- Card 1 -->
+          <a href="droit-urbanisme.html" class="dp-card-link">
+          <div class="dp-card">
+            <div class="dp-card-icon">
+              <img src="mqj9a0gq-icone-urbanisme-fxc.png" alt="Urbanisme">
+            </div>
+            <h3 style="font-weight: 500; font-size: 16px;">Urbanisme</h3>
+          </div>
+          </a>
+          <!-- Card 2 -->
+          <a href="fonction-publique.html" class="dp-card-link">
+          <div class="dp-card" style="background-color: rgb(13, 27, 62);">
+            <div class="dp-card-icon">
+              <img src="mqj9a0gt-icone-fonction-publique-fxc.png" alt="Fonction publique">
+            </div>
+            <h3 style="font-weight: 500; color: rgb(255, 255, 255);">Fonction publique</h3>
+          </div>
+          </a>
+          <!-- Card 3 -->
+          <a href="commande-publique.html" class="dp-card-link">
+          <div class="dp-card">
+            <div class="dp-card-icon">
+              <img src="mqj9a0gu-icone-commande-publique-fxc.png" alt="Commande publique">
+            </div>
+            <h3 style="font-weight: 500;">Commande publique</h3>
+          </div>
+          </a>
+          <!-- Card 4 -->
+          <a href="responsabilite-administrative.html" class="dp-card-link">
+          <div class="dp-card" style="background-color: rgb(13, 27, 62);">
+            <div class="dp-card-icon">
+              <img src="mqj9a0gp-icone-responsabilite-administrative-fxc.png" alt="Responsabilité administrative">
+            </div>
+            <h3 style="font-weight: 500; color: rgb(255, 255, 255);">Responsabilité administrative</h3>
+          </div>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <style>
+    .cards-section {
+      position: relative;
+      z-index: 10;
+      top: -140px;
+      margin-bottom: -140px;
+      padding: 0;
+      background: transparent;
+    }
+    .cards-grid-wrap {
+      max-width: 1280px;
+      margin: 0 auto;
+      padding: 0;
+    }
+    .cards-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 0;
+    }
+    .dp-card {
+      padding: 40px 14px;
+      text-align: center;
+      cursor: pointer;
+      transition: transform 0.35s ease, box-shadow 0.35s ease;
+      height: 280px;
+      min-height: 280px;
+      max-height: 280px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+    }
+    .dp-card:nth-child(1),
+    .dp-card:nth-child(3) {
+      background: #FFFFFF;
+      box-shadow: 0px 12px 18px -6px rgba(0,0,0,.3);
+    }
+    .dp-card:nth-child(2),
+    .dp-card:nth-child(4) {
+      background: #0D1B3E;
+    }
+    .dp-card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0px 16px 24px -4px rgba(0,0,0,.35);
+    }
+    .dp-card:nth-child(1):hover,
+    .dp-card:nth-child(3):hover {
+      box-shadow: 0px 16px 24px -4px rgba(0,0,0,.35);
+    }
+    .dp-card:nth-child(1) h3,
+    .dp-card:nth-child(3) h3 {
+      color: #0D1B3E;
+    }
+    .dp-card:nth-child(2) h3,
+    .dp-card:nth-child(4) h3 {
+      color: #FFFFFF;
+    }
+    .dp-card-icon {
+      margin-bottom: 16px;
+      height: 80px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .dp-card-icon img {
+      height: 80px;
+      width: 80px;
+      object-fit: contain;
+      filter: brightness(0) saturate(100%) invert(77%) sepia(32%) saturate(538%) hue-rotate(353deg) brightness(89%) contrast(89%);
+    }
+    .dp-card-link {
+      display: contents;
+      text-decoration: none;
+      color: inherit;
+    }
+    .dp-card-link:hover .dp-card {
+      transform: translateY(-4px);
+    }
+    .dp-card-link:hover .dp-card:nth-child(1),
+    .dp-card-link:hover .dp-card:nth-child(3) {
+      box-shadow: 0px 16px 24px -4px rgba(0,0,0,.35);
+    }
+    .dp-card h3 {
+      font-family: var(--font-display);
+      font-size: 16px;
+      font-weight: 700;
+      margin: 0;
+      line-height: 1.3;
+      letter-spacing: 0.02em;
+      text-align: center;
+    }
+    @media (max-width: 980px) {
+      .cards-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+      .dp-card {
+        padding: 32px 12px;
+        height: 240px;
+        min-height: 240px;
+        max-height: 240px;
+      }
+      .dp-card-icon {
+        height: 64px;
+        margin-bottom: 14px;
+      }
+      .dp-card-icon img {
+        height: 64px;
+        width: 64px;
+      }
+      .dp-card h3 {
+        font-size: 15px;
+      }
+    }
+    @media (max-width: 540px) {
+      .cards-grid {
+        grid-template-columns: 1fr;
+      }
+      .dp-card {
+        height: 200px;
+        min-height: 200px;
+        max-height: 200px;
+      }
+    }
+
+    .pagefoot {
+      background: url('mqhv4t0v-backgr.png');
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+      color: #C0C0C0;
+      padding-block: var(--gap-xl);
+      font-size: 13px;
+      border-top: 1px solid rgba(200,164,93,.15);
+    }
+    .footer-grid {
+      display: grid;
+      grid-template-columns: 195px 1fr;
+      gap: 48px;
+      align-items: start;
+    }
+    .footer-col {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+    .footer-content-group {
+      display: flex;
+      flex-direction: row;
+      gap: 48px;
+      justify-content: space-between;
+    }
+    .footer-content-group .footer-col {
+      flex: 1;
+    }
+    .footer-logo-col {
+      align-items: flex-start;
+    }
+    .footer-logo-placeholder {
+      width: auto;
+      height: auto;
+      display: flex;
+      align-items: center;
+      justify-content: flex-start;
+    }
+    .footer-logo-img {
+      width: 195px;
+      height: 195px;
+      object-fit: contain;
+    }
+    .footer-label {
+      font-family: var(--font-body);
+      font-size: 10px;
+      font-weight: 600;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--accent);
+      margin-bottom: 8px;
+    }
+    .footer-detail, a.footer-detail {
+      font-family: var(--font-body);
+      font-size: 13px;
+      line-height: 1.6;
+      color: #C0C0C0;
+      margin: 0;
+      text-decoration: none;
+    }
+    a.footer-detail:hover { color: var(--accent); }
+    .footer-link {
+      font-family: var(--font-body);
+      font-size: 13px;
+      color: #C0C0C0;
+      text-decoration: none;
+      transition: color .2s;
+    }
+    .footer-link:hover { color: var(--accent); }
+    .footer-bottom {
+      margin-top: 56px;
+      padding-top: 20px;
+      border-top: 1px solid rgba(200,164,93,.12);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-size: 12px;
+    }
+    @media (max-width: 920px) {
+      .footer-grid { grid-template-columns: 1fr; }
+      .footer-content-group { flex-direction: column; gap: 36px; }
+      .footer-logo-col { grid-column: 1 / -1; }
+      .footer-bottom { flex-direction: column; gap: 8px; text-align: center; }
+    }
+    @media (max-width: 540px) {
+      .footer-grid { grid-template-columns: 1fr; }
+    }
+    .pagefoot a:hover { color: var(--accent); }
+    </style>
+  </main>
+
+  <footer class="pagefoot" data-od-id="footer">
+    <div class="container">
+      <div class="footer-grid" style="align-items: center; gap: 65px;">
+        <div class="footer-col footer-logo-col">
+          <div class="footer-logo-placeholder" id="footer-logo">
+            <img src="mqccb7gi-LOGO-officiel-_1_.webp" alt="François-Xavier Cornuot" class="footer-logo-img" style="width:195px;height:195px">
+          </div>
+        </div>
+        <div class="footer-col footer-content-group">
+          <div class="footer-col">
+            <p class="footer-detail">francois-xavier.cornuot@avocat.fr</p>
+            <p class="footer-detail">06.26.22.12.75</p>
+            <p class="footer-detail">57 rue Ernest RENAN<br>92000 NANTERRE</p>
+          </div>
+          <div class="footer-col">
+            <a href="fxcornuot-avocat.html#about" class="footer-link">À propos</a>
+            <a href="fxcornuot-avocat.html#expertise" class="footer-link">Expertise</a>
+            <a href="fxcornuot-avocat.html#actualites" class="footer-link">Actualités</a>
+            <a href="fxcornuot-avocat.html#process-section" class="footer-link">Comment ça marche ?</a>
+            <a href="fxcornuot-avocat.html#contact" class="footer-link">Contact</a>
+          </div>
+          <div class="footer-col">
+            <a href="droit-public.html" class="footer-detail">Droit public</a>
+            <a href="droit-des-etrangers.html" class="footer-detail" style="white-space: nowrap;">Droit des étrangers et de la nationalité</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    (function() {
+      var slides = document.querySelectorAll('.hero-slider img');
+      var dotsContainer = document.getElementById('hero-dots');
+      var current = 0;
+
+      // Create dots
+      slides.forEach(function(_, i) {
+        var dot = document.createElement('button');
+        dot.className = 'hero-dot' + (i === 0 ? ' active' : '');
+        dot.addEventListener('click', function() { goToSlide(i); });
+        dotsContainer.appendChild(dot);
+      });
+      var dots = dotsContainer.querySelectorAll('.hero-dot');
+
+      function updateDots() {
+        dots.forEach(function(d, i) { d.classList.toggle('active', i === current); });
+      }
+
+      function goToSlide(index) {
+        slides[current].classList.remove('active');
+        current = index;
+        slides[current].classList.add('active');
+        updateDots();
+      }
+    })();
+
+    var nav = document.getElementById('topnav');
+    if (nav) {
+      window.addEventListener('scroll', function() {
+        nav.classList.toggle('scrolled', window.scrollY > 80);
+      });
+      if (window.scrollY > 80) { nav.classList.add('scrolled'); }
+    }
+  </script>
+
+</body></html>

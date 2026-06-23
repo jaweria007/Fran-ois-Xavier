@@ -1,0 +1,18 @@
+{
+  "version": 1,
+  "kind": "html",
+  "title": "droit-des-etrangers.html",
+  "entry": "droit-des-etrangers.html",
+  "renderer": "html",
+  "status": "complete",
+  "exports": [
+    "html",
+    "pdf",
+    "zip"
+  ],
+  "createdAt": "2026-06-20T08:46:34.033Z",
+  "updatedAt": "2026-06-22T08:08:04.756Z",
+  "metadata": {
+    "inferred": true
+  }
+}

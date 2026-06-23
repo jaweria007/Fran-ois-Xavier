@@ -1,0 +1,236 @@
+- generic [active] [ref=e1]:
+  - banner [ref=e2]:
+    - generic [ref=e3]:
+      - link "François-Xavier Cornuot" [ref=e4] [cursor=pointer]:
+        - /url: "#"
+        - img "François-Xavier Cornuot" [ref=e5]
+      - generic [ref=e6]:
+        - navigation [ref=e7]:
+          - link "À PROPOS" [ref=e8] [cursor=pointer]:
+            - /url: "#about"
+          - link "EXPERTISE" [ref=e9] [cursor=pointer]:
+            - /url: "#expertise"
+          - link "ACTUALITÉS" [ref=e10] [cursor=pointer]:
+            - /url: "#actualites"
+          - link "COMMENT ÇA MARCHE ?" [ref=e11] [cursor=pointer]:
+            - /url: "#process-section"
+          - link "FAQ" [ref=e12] [cursor=pointer]:
+            - /url: "#faq"
+        - button "Contact" [ref=e13] [cursor=pointer]
+  - main [ref=e14]:
+    - generic [ref=e15]:
+      - generic [ref=e17]:
+        - heading "LA PRÉCISION, AU SERVICE DE VOS INTÉRÊTS." [level=1] [ref=e23]:
+          - generic [ref=e24]: LA PRÉCISION,
+          - generic [ref=e25]: AU SERVICE DE VOS INTÉRÊTS.
+        - generic [ref=e26]:
+          - link "Prendre attache" [ref=e27] [cursor=pointer]:
+            - /url: "#contact"
+          - link "Appeler Maître Cornuot" [ref=e28] [cursor=pointer]:
+            - /url: tel:+33626221275
+      - generic [ref=e29]:
+        - button [ref=e30] [cursor=pointer]
+        - button [ref=e31] [cursor=pointer]
+        - button [ref=e32] [cursor=pointer]
+    - generic [ref=e34]:
+      - heading "Une expertise fondée sur l'exigence juridique" [level=2] [ref=e35]
+      - generic [ref=e36]:
+        - generic [ref=e37]:
+          - img [ref=e39]
+          - generic [ref=e43]: Bac+15
+          - paragraph [ref=e44]: NIVEAU DE FORMATION
+        - generic [ref=e45]:
+          - img [ref=e47]
+          - generic [ref=e53]: Docteur
+          - paragraph [ref=e54]: EN DROIT PUBLIC
+        - generic [ref=e55]:
+          - img [ref=e57]
+          - generic [ref=e60]: France entière
+          - paragraph [ref=e61]: INTERVENTIONS SUR TOUT LE TERRITOIRE
+        - generic [ref=e62]:
+          - img [ref=e64]
+          - generic [ref=e67]: Common Law
+          - paragraph [ref=e68]: DROIT COMPARÉ FRANCE & CANADA
+    - generic [ref=e71]:
+      - img "Portrait François-Xavier Cornuot" [ref=e73]
+      - generic [ref=e74]:
+        - heading "Une approche fondée sur la précision" [level=2] [ref=e75]:
+          - text: Une approche fondée sur la
+          - text: précision
+        - generic [ref=e78]:
+          - paragraph [ref=e79]: Docteur en droit public et ancien enseignant-chercheur, François-Xavier Cornuot met son expertise au service de situations juridiques complexes nécessitant rigueuranticipation, analyse et .
+          - paragraph [ref=e80]: Le Cabinet accompagne les collectivités publiques, les particuliers et les ressortissants étrangers dans leurs démarches et contentieux relevant du droit public et du droit des étrangers.
+          - paragraph [ref=e81]: Chaque dossier fait l'objet d'une étude approfondie afin de proposer un accompagnement personnalisé, fondé sur l'écoute, la disponibilité et la recherche de solutions adaptées.
+        - button "Présenter votre dossier" [ref=e83] [cursor=pointer]
+    - generic [ref=e85]:
+      - heading "Les honoraires du cabinet sont adapté à la fortune de chaque clients" [level=2] [ref=e86]:
+        - text: Les honoraires du cabinet sont adapté à la fortune
+        - text: de chaque clients
+      - paragraph [ref=e87]: Chaque situation est différente. Les modalités d'intervention et les honoraires le sont également.
+      - button "Appeler le Cabinet en toute tranquillité" [ref=e88] [cursor=pointer]
+    - generic [ref=e89]:
+      - heading "Votre dossier, étape par étape" [level=2] [ref=e91]
+      - generic [ref=e94]:
+        - paragraph [ref=e95]:
+          - text: Voici comment le cabinet vous accompagne afin
+          - text: de construire la stratégie la plus adaptée à vos intérêts.
+        - generic [ref=e96]:
+          - generic [ref=e97]: "01"
+          - heading "Premier contact" [level=3] [ref=e98]
+          - paragraph [ref=e99]: Exposez votre situation par téléphone ou par courriel afin de permettre au cabinet de comprendre les premières difficultés que vous rencontrez.
+        - generic [ref=e101]:
+          - generic [ref=e102]: "02"
+          - heading "Analyse de votre dossier" [level=3] [ref=e103]
+          - paragraph [ref=e104]:
+            - text: Un premier rendez-vous physique ou par visio est organisé.
+            - text: "- recueillir vos documents"
+            - text: "- Identification des enjeux juridiques."
+        - generic [ref=e106]:
+          - generic [ref=e107]: "03"
+          - heading "Consultation & stratégie" [level=3] [ref=e108]
+          - paragraph [ref=e109]:
+            - text: "Maître Cornuot vous présente :"
+            - text: "- Les solutions envisageables"
+            - text: "- La stratégie la plus adaptée suivant votre situation"
+        - generic [ref=e111]:
+          - generic [ref=e112]: "04"
+          - heading "Mission & accompagnement" [level=3] [ref=e113]
+          - paragraph [ref=e114]:
+            - text: Établissement d’une convention d’honoraires afin de formaliser l’intervention du Cabinet.
+            - text: "- Choix et signature du client"
+        - generic [ref=e116]:
+          - generic [ref=e117]: "05"
+          - heading "Intervention du cabinet" [level=3] [ref=e118]
+          - paragraph [ref=e119]:
+            - text: "- À chaque étape importante du dossier, le Cabinet veille à tenir son client régulièrement informé de l’avancement de sa situation."
+            - text: "- La disponibilité et la réactivité constituent des engagements essentiels dans l’accompagnement de nos clients"
+    - link "CONTACT - CONTACT - CONTACT - CONTACT - CONTACT - CONTACT - CONTACT - CONTACT - CONTACT" [ref=e123] [cursor=pointer]:
+      - /url: "#contact"
+      - generic [ref=e124]:
+        - generic [ref=e125]: CONTACT
+        - generic [ref=e126]: "-"
+        - generic [ref=e127]: CONTACT
+        - generic [ref=e128]: "-"
+        - generic [ref=e129]: CONTACT
+        - generic [ref=e130]: "-"
+        - generic [ref=e131]: CONTACT
+        - generic [ref=e132]: "-"
+        - generic [ref=e133]: CONTACT
+        - generic [ref=e134]: "-"
+        - generic [ref=e135]: CONTACT
+        - generic [ref=e136]: "-"
+        - generic [ref=e137]: CONTACT
+        - generic [ref=e138]: "-"
+        - generic [ref=e139]: CONTACT
+        - generic [ref=e140]: "-"
+        - generic [ref=e141]: CONTACT
+    - generic [ref=e142]:
+      - heading "Les domaines d'expertise du Cabinet" [level=2] [ref=e144]
+      - generic [ref=e145]:
+        - generic [ref=e146]:
+          - generic [ref=e147]:
+            - heading "Droit public" [level=3] [ref=e148]
+            - img "FXC" [ref=e150]
+          - generic [ref=e151]:
+            - paragraph [ref=e152]: Le Cabinet intervient auprès des collectivités publiques, des agents, des particuliers et des entreprises afin de sécuriser leurs démarches, prévenir les litiges et défendre leurs intérêts devant les administrations et les juridictions administratives.
+            - link "En Savoir Plus" [ref=e153] [cursor=pointer]:
+              - /url: droit-public.html
+              - img [ref=e155]
+              - generic [ref=e157]: En Savoir Plus
+        - generic [ref=e158]:
+          - generic [ref=e159]:
+            - heading "Droit des étrangers et de la nationalité" [level=3] [ref=e160]
+            - img "Droit des étrangers" [ref=e162]
+          - generic [ref=e163]:
+            - paragraph [ref=e164]: Titres de séjour, éloignement, asile, naturalisation, contentieux des visas. Une pratique rigoureuse pour défendre les droits des étrangers dans leurs démarches administratives et contentieuses, avec une attention particulière à la dimension humaine de chaque dossier.
+            - link "En Savoir Plus" [ref=e165] [cursor=pointer]:
+              - /url: droit-des-etrangers.html
+              - img [ref=e167]
+              - generic [ref=e169]: En Savoir Plus
+    - heading "Actualités" [level=2] [ref=e172]
+    - generic [ref=e173]:
+      - generic [ref=e175]:
+        - button [ref=e176] [cursor=pointer]
+        - button [ref=e177] [cursor=pointer]
+      - heading "VOS QUESTIONS, MES RÉPONSES" [level=2] [ref=e179]
+      - paragraph [ref=e181]:
+        - text: Face à l'administration, l'incertitude est souvent plus difficile
+        - text: à vivre que le litige lui-même. Voici les questions que mes clients
+        - text: me posent en premier — et les réponses directes qu'elles méritent.
+      - generic [ref=e183]:
+        - generic [ref=e184] [cursor=pointer]:
+          - generic [ref=e185]:
+            - generic [ref=e186]: À qui s'adresse le Cabinet en droit public ?
+            - generic [ref=e187]: +
+          - generic: Le Cabinet accompagne les collectivités territoriales, leurs élus, leurs directions administratives, les agents publics, ainsi que les particuliers confrontés à une décision administrative ou à un litige d'urbanisme. Il intervient notamment auprès des communes, départements, régions, EPCI, maires, DGS, services RH, acheteurs publics, fonctionnaires, contractuels, riverains, propriétaires et porteurs de projets.
+        - generic [ref=e189] [cursor=pointer]:
+          - generic [ref=e190]:
+            - generic [ref=e191]: Est-il trop tard pour agir ? J'ai reçu une décision il y a quelques semaines.
+            - generic [ref=e192]: +
+          - generic: "En droit administratif, les délais de recours sont courts (souvent deux mois) et leur non-respect rend la décision définitive. Mais « trop tard » ne veut pas toujours dire « sans recours ». Plusieurs situations permettent de rouvrir ou contourner ces délais : une notification irrégulière, l'absence de mentions obligatoires sur votre décision, ou l'existence de voies de recours parallèles. Et pour certains contentieux urgents (notamment en droit des étrangers) des procédures de référé permettent d'agir en quelques jours. La première chose que je vous conseille à faire : ne pas attendre davantage et me contacter."
+        - generic [ref=e194] [cursor=pointer]:
+          - generic [ref=e195]:
+            - generic [ref=e196]: Faire appel à un Docteur en droit public, est-ce vraiment à ma portée financièrement ?
+            - generic [ref=e197]: +
+          - generic: C'est la question que beaucoup n'osent pas poser et pourtant c'est souvent la première qui se pose. La réponse est oui. Conformément à la déontologie de la profession, mes honoraires tiennent compte de la situation de fortune de chaque client, c'est une obligation légale, pas une promesse commerciale. Par ailleurs, votre assurance habitation ou auto inclut souvent une protection juridique qui peut couvrir tout ou partie des honoraires. Transparence totale sur les honoraires dès le premier rendez-vous, avant toute signature.
+        - generic [ref=e199] [cursor=pointer]:
+          - generic [ref=e200]:
+            - generic [ref=e201]: Je suis fonctionnaire. Puis-je contester une décision de mon administration sans mettre ma carrière en danger ?
+            - generic [ref=e202]: +
+          - generic: "C'est la peur la plus silencieuse et la plus paralysante. Ce que la loi garantit : le recours à un avocat est votre droit, protégé par la Constitution. Votre employeur public ne peut légalement vous sanctionner pour avoir exercé un recours. Ce que je mets en place : une stratégie qui tient compte de vos objectifs réels (rester en poste, obtenir une mutation, être reconnu dans vos droits) pas seulement de l'angle juridique. Le secret professionnel protège intégralement nos échanges."
+        - generic [ref=e204] [cursor=pointer]:
+          - generic [ref=e205]:
+            - generic [ref=e206]: Mon permis de construire vient d'être attaqué par un voisin. Dois-je vraiment m'en inquiéter ?
+            - generic [ref=e207]: +
+          - generic: Tout dépend de la solidité du recours adverse et de votre réactivité. Le voisin doit démontrer un intérêt à agir précis, respecter des délais stricts, notifier son recours. Beaucoup de recours sont irrecevables, encore faut-il le faire constater. Si le fond mérite d'être examiné, des outils de régularisation en cours d'instance permettent souvent de purger les vices allégués sans attendre l'annulation. Agir vite, c'est garder les meilleures cartes en main.
+        - generic [ref=e209] [cursor=pointer]:
+          - generic [ref=e210]:
+            - generic [ref=e211]: J'ai reçu une OQTF. Est-ce vraiment la fin ?
+            - generic [ref=e212]: +
+          - generic: "Non — loin de là. Une OQTF est une décision administrative, et comme toute décision administrative, elle peut être contestée. Le juge est tenu d'examiner votre situation de manière individualisée : votre vie privée et familiale, votre ancienneté en France, vos attaches, les risques en cas de retour. Des procédures d'urgence permettent d'obtenir une décision en quelques jours. Dans de nombreux cas, l'annulation de l'OQTF conduit à la délivrance d'un titre de séjour. Recevoir une OQTF, c'est le début d'un combat juridique — pas la fin d'un droit."
+        - generic [ref=e214] [cursor=pointer]:
+          - generic [ref=e215]:
+            - generic [ref=e216]: Vous êtes basé à Nanterre. Pouvez-vous intervenir pour ma situation, à l'autre bout de la France ?
+            - generic [ref=e217]: +
+          - generic: "Oui, et c'est une réalité quotidienne du cabinet. Le droit administratif se plaide devant les juridictions de toute la France (tribunaux administratifs, cours administratives d'appel, Conseil d'État). J'interviens régulièrement sur l'ensemble du territoire. La distance n'est pas un obstacle : échanges par courriel ou visioconférence, dossiers instruits à distance, déplacements pour les audiences lorsque nécessaire. Que vous soyez une commune de Haute-Savoie, un fonctionnaire à Bordeaux ou un ressortissant à Marseille : vos droits méritent la même défense — où que vous soyez en France."
+    - generic [ref=e220]:
+      - img "Cabinet François-Xavier Cornuot" [ref=e222]
+      - generic [ref=e223]: in
+      - generic [ref=e224]:
+        - paragraph [ref=e225]: Face à l'administration, personne ne devrait se retrouver seul face à une décision qu'il sait injuste.
+        - generic [ref=e226]:
+          - generic [ref=e227]:
+            - generic [ref=e228]: ADRESSE
+            - paragraph [ref=e229]: 57 rue Ernest RENAN — 92000 Nanterre
+          - generic [ref=e230]:
+            - generic [ref=e231]: EMAIL
+            - paragraph [ref=e232]: francois-xavier.cornuot@avocat.fr
+          - generic [ref=e233]:
+            - generic [ref=e234]: TÉLÉPHONE
+            - paragraph [ref=e235]: 06.26.22.12.75
+  - contentinfo [ref=e236]:
+    - generic [ref=e238]:
+      - img "François-Xavier Cornuot" [ref=e241]
+      - generic [ref=e242]:
+        - generic [ref=e243]:
+          - paragraph [ref=e244]: francois-xavier.cornuot@avocat.fr
+          - paragraph [ref=e245]: 06.26.22.12.75
+          - paragraph [ref=e246]:
+            - text: 57 rue Ernest RENAN
+            - text: 92000 NANTERRE
+        - generic [ref=e247]:
+          - link "À propos" [ref=e248] [cursor=pointer]:
+            - /url: "#about"
+          - link "Expertise" [ref=e249] [cursor=pointer]:
+            - /url: "#expertise"
+          - link "Actualités" [ref=e250] [cursor=pointer]:
+            - /url: "#actualites"
+          - link "Comment ça marche ?" [ref=e251] [cursor=pointer]:
+            - /url: "#process-section"
+          - link "Contact" [ref=e252] [cursor=pointer]:
+            - /url: "#contact"
+        - generic [ref=e253]:
+          - link "Droit public" [ref=e254] [cursor=pointer]:
+            - /url: droit-public.html
+          - link "Droit des étrangers et de la nationalité" [ref=e255] [cursor=pointer]:
+            - /url: droit-des-etrangers.html

@@ -1,0 +1,19 @@
+{
+  "version": 1,
+  "kind": "html",
+  "title": "responsabilite-administrative.html",
+  "entry": "responsabilite-administrative.html",
+  "renderer": "html",
+  "status": "complete",
+  "exports": [
+    "html",
+    "pdf",
+    "zip"
+  ],
+  "createdAt": "2026-06-22T07:19:37.214Z",
+  "updatedAt": "2026-06-22T07:42:22.286Z",
+  "metadata": {
+    "inferred": true,
+    "reconciled": true
+  }
+}

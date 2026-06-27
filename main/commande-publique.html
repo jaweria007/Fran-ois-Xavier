@@ -104,6 +104,62 @@
       transition: color .2s, background .2s;
     }
     .topnav nav a:hover { color: var(--accent); background: rgba(200,164,93,.08); }
+    .topnav nav .nav-item-dropdown { position: relative; display: inline-flex; }
+    .topnav nav .dropdown {
+      position: absolute;
+      top: 100%;
+      left: 0;
+      background: var(--marine-deep);
+      border: 1px solid rgba(200,164,93,.2);
+      border-radius: 0;
+      padding: 8px 0;
+      min-width: 340px;
+      visibility: hidden;
+      opacity: 0;
+      transition: opacity 0.25s ease, visibility 0.25s ease;
+      z-index: 1000;
+      list-style: none;
+      margin: 0;
+    }
+    .topnav nav .nav-item-dropdown:hover > .dropdown {
+      visibility: visible;
+      opacity: 1;
+    }
+    .topnav nav .dropdown li { position: relative; list-style: none; }
+    .topnav nav .dropdown a {
+      display: block;
+      padding: 10px 20px;
+      color: #fff;
+      font-size: 14px;
+      text-transform: none;
+      letter-spacing: 0.02em;
+      white-space: nowrap;
+      border-radius: 0;
+    }
+    .topnav nav .dropdown a:hover {
+      color: var(--accent);
+      background: rgba(200,164,93,.08);
+    }
+    .topnav nav .dropdown .dropdown-sub {
+      position: absolute;
+      top: -9px;
+      left: calc(100% - 1px);
+      background: var(--marine-deep);
+      border: 1px solid rgba(200,164,93,.2);
+      border-left: none;
+      border-radius: 0;
+      padding: 8px 0;
+      min-width: 270px;
+      visibility: hidden;
+      opacity: 0;
+      transition: opacity 0.25s ease, visibility 0.25s ease;
+      list-style: none;
+      margin: 0;
+    }
+    .topnav nav .dropdown li:hover > .dropdown-sub {
+      visibility: visible;
+      opacity: 1;
+    }
     .topnav .btn {
       font-size: 11px; font-weight: 600;
       letter-spacing: 0.1em; text-transform: uppercase;
@@ -1251,8 +1307,22 @@
       <div class="topnav-right">
         <nav>
           <a href="fxcornuot-avocat.html#about" style="font-size: 14px; text-align: center;">À PROPOS</a>
-          <a href="fxcornuot-avocat.html#expertise" style="font-size: 14px;">EXPERTISE</a>
-          <a href="fxcornuot-avocat.html#actualites" style="font-size: 14px;">ACTUALITÉS</a>
+          <div class="nav-item-dropdown">
+            <a href="javascript:void(0)" style="font-size: 14px; cursor: default;">EXPERTISE</a>
+            <ul class="dropdown">
+              <li>
+                <a href="droit-public.html">Droit public</a>
+                <ul class="dropdown-sub">
+                  <li><a href="droit-urbanisme.html">Droit de l'urbanisme</a></li>
+                  <li><a href="fonction-publique.html">Fonction publique</a></li>
+                  <li><a href="commande-publique.html">Commande publique</a></li>
+                  <li><a href="responsabilite-administrative.html">Responsabilité administrative</a></li>
+                </ul>
+              </li>
+              <li><a href="droit-des-etrangers.html">Droit des étrangers et de la nationalité</a></li>
+            </ul>
+          </div>
+          <a href="javascript:void(0)" style="font-size: 14px;">ACTUALITÉS</a>
           <a href="fxcornuot-avocat.html#process-section" style="font-size: 14px;">COMMENT ÇA MARCHE ?</a>
           <a href="fxcornuot-avocat.html#faq" style="font-size: 14px;">FAQ</a>
         </nav>

@@ -188,33 +188,24 @@
     }
     .btn-primary:hover { opacity: .88; }
 
-    /* Horizontal Slider */
-    .slider-section {
+    /* Hero section (static background) */
+    .hero-etrangers {
       position: relative;
       width: 100%;
       height: 720px;
       overflow: hidden;
       background: var(--bg);
     }
-    .horizontal-slider {
-      display: flex;
-      width: 300%;
-      height: 100%;
-      transition: transform 0.8s ease;
-    }
-    .horizontal-slider .slide {
-      width: 100vw;
-      height: 720px;
-      flex-shrink: 0;
-      position: relative;
-    }
-    .horizontal-slider .slide img {
+    .hero-etrangers .hero-bg-img {
+      position: absolute;
+      inset: 0;
       width: 100%;
       height: 100%;
       object-fit: cover;
       object-position: center;
+      z-index: 0;
     }
-    .slide-overlay {
+    .hero-etrangers .hero-overlay {
       position: absolute;
       inset: 0;
       background: rgba(13, 27, 62, 0.56);
@@ -248,29 +239,6 @@
       letter-spacing: 0.02em;
       text-align: center;
       white-space: nowrap;
-    }
-    .slider-dots {
-      display: flex;
-      justify-content: center;
-      gap: 12px;
-      position: absolute;
-      bottom: 40px;
-      left: 0;
-      right: 0;
-      z-index: 3;
-    }
-    .slider-dot {
-      width: 10px;
-      height: 10px;
-      border-radius: 50%;
-      border: 1.5px solid #C9A15A;
-      background: transparent;
-      cursor: pointer;
-      transition: background 0.3s ease, border-color 0.3s ease;
-      padding: 0;
-    }
-    .slider-dot.active {
-      background: #C9A15A;
     }
 
     /* Domaines d'intervention - Matching Thibierge.law reference */
@@ -454,12 +422,6 @@
     @media (max-width: 720px) {
       .hero-etrangers {
         height: 600px;
-      }
-      .hero-etrangers-title {
-        font-size: 28px;
-      }
-      .horizontal-slider .slide {
-        height: 300px;
       }
     }
 
@@ -1329,31 +1291,14 @@
   </header>
 
   <main id="content">
-    <!-- Horizontal Image Slider with Text Overlay -->
-    <section class="slider-section" data-od-id="slider">
-      <div class="horizontal-slider" id="horizontal-slider">
-        <div class="slide">
-          <img src="mqjbmeiq-photo-1504896287989-ff1fbde00199.avif" alt="Droit des étrangers 1">
-          <div class="slide-overlay"></div>
-        </div>
-        <div class="slide">
-          <img src="mqjbmej7-photo-1526821799652-2dc51675628e.avif" alt="Droit des étrangers 2">
-          <div class="slide-overlay"></div>
-        </div>
-        <div class="slide">
-          <img src="mqjbmnj4-de.png" alt="Droit des étrangers 3">
-          <div class="slide-overlay"></div>
-        </div>
-      </div>
+    <!-- Hero section -->
+    <section class="hero-etrangers" data-od-id="slider">
+      <img class="hero-bg-img" src="mqjbmej7-photo-1526821799652-2dc51675628e.avif" alt="">
+      <div class="hero-overlay"></div>
       <div class="slider-text-overlay">
         <div class="slider-title-wrap">
           <h1 class="slider-title">Droit des étrangers et de la nationalité</h1>
         </div>
-      </div>
-      <div class="slider-dots" id="slider-dots">
-        <button class="slider-dot active" data-slide="0"></button>
-        <button class="slider-dot" data-slide="1"></button>
-        <button class="slider-dot" data-slide="2"></button>
       </div>
     </section>
 
@@ -1843,25 +1788,6 @@
       });
     })();
 
-    // Horizontal Slider
-    (function() {
-      const slider = document.getElementById('horizontal-slider');
-      const dots = document.querySelectorAll('.slider-dot');
-      let currentSlide = 0;
-      const totalSlides = 3;
-
-      function goToSlide(index) {
-        currentSlide = index;
-        slider.style.transform = `translateX(-${index * 100}vw)`;
-        dots.forEach((dot, i) => {
-          dot.classList.toggle('active', i === index);
-        });
-      }
-
-      dots.forEach((dot, index) => {
-        dot.addEventListener('click', () => goToSlide(index));
-      });
-    })();
 
     // Scroll-triggered animations - matching Thibierge AOS pattern
     (function() {

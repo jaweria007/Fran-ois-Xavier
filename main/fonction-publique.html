@@ -188,40 +188,31 @@
     }
     .btn-primary:hover { opacity: .88; }
 
-    /* Horizontal Slider */
-    .slider-section {
+    /* Hero section */
+    .hero-section {
       position: relative;
       width: 100%;
       height: 720px;
       overflow: hidden;
       background: var(--bg);
     }
-    .horizontal-slider {
-      display: flex;
-      width: 300%;
-      height: 100%;
-      transition: transform 0.8s ease;
-    }
-    .horizontal-slider .slide {
-      width: 100vw;
-      height: 720px;
-      flex-shrink: 0;
-      position: relative;
-    }
-    .horizontal-slider .slide img {
+    .hero-bg-img {
       width: 100%;
       height: 100%;
       object-fit: cover;
       object-position: center;
+      position: absolute;
+      inset: 0;
+      z-index: 0;
     }
-    .slide-overlay {
+    .hero-overlay {
       position: absolute;
       inset: 0;
       background: rgba(13, 27, 62, 0.56);
       pointer-events: none;
       z-index: 1;
     }
-    .slider-text-overlay {
+    .hero-content {
       position: absolute;
       top: 0;
       left: 0;
@@ -233,12 +224,12 @@
       z-index: 2;
       pointer-events: none;
     }
-    .slider-title-wrap {
+    .hero-title-wrap {
       display: inline-block;
       text-align: center;
       max-width: 100%;
     }
-    .slider-title {
+    .hero-title {
       font-family: var(--font-display);
       font-size: clamp(32px, 4vw, 52px);
       font-weight: 400;
@@ -248,29 +239,6 @@
       letter-spacing: 0.02em;
       text-align: center;
       white-space: nowrap;
-    }
-    .slider-dots {
-      display: flex;
-      justify-content: center;
-      gap: 12px;
-      position: absolute;
-      bottom: 40px;
-      left: 0;
-      right: 0;
-      z-index: 3;
-    }
-    .slider-dot {
-      width: 10px;
-      height: 10px;
-      border-radius: 50%;
-      border: 1.5px solid #C9A15A;
-      background: transparent;
-      cursor: pointer;
-      transition: background 0.3s ease, border-color 0.3s ease;
-      padding: 0;
-    }
-    .slider-dot.active {
-      background: #C9A15A;
     }
 
     /* Domaines d'intervention - Matching Thibierge.law reference */
@@ -458,8 +426,8 @@
       .hero-etrangers-title {
         font-size: 28px;
       }
-      .horizontal-slider .slide {
-        height: 300px;
+      .hero-section {
+        height: 600px;
       }
     }
 
@@ -1329,31 +1297,14 @@
   </header>
 
   <main id="content">
-    <!-- Horizontal Image Slider with Text Overlay -->
-    <section class="slider-section" data-od-id="slider">
-      <div class="horizontal-slider" id="horizontal-slider">
-        <div class="slide">
-          <img src="mqovtjnx-b71d52ead679ea671484063f049162c5-_1_.jpg" alt="Fonction publique 1">
-          <div class="slide-overlay"></div>
+    <!-- Hero section -->
+    <section class="hero-section" data-od-id="slider">
+      <img class="hero-bg-img" src="mqovtjnx-b71d52ead679ea671484063f049162c5-_1_.jpg" alt="Fonction publique">
+      <div class="hero-overlay"></div>
+      <div class="hero-content">
+        <div class="hero-title-wrap">
+          <h1 class="hero-title">Fonction publique</h1>
         </div>
-        <div class="slide">
-          <img src="mqovtjo3-premium_photo-1718467524348-19153bba9817-_1_.avif" alt="Fonction publique 2">
-          <div class="slide-overlay"></div>
-        </div>
-        <div class="slide">
-          <img src="mqovtjoj-iScreen-Shoter---Aperc_u---260616115219-_1_.png" alt="Fonction publique 3">
-          <div class="slide-overlay"></div>
-        </div>
-      </div>
-      <div class="slider-text-overlay">
-        <div class="slider-title-wrap">
-          <h1 class="slider-title">Fonction publique</h1>
-        </div>
-      </div>
-      <div class="slider-dots" id="slider-dots">
-        <button class="slider-dot active" data-slide="0"></button>
-        <button class="slider-dot" data-slide="1"></button>
-        <button class="slider-dot" data-slide="2"></button>
       </div>
     </section>
 
@@ -1860,25 +1811,7 @@ Le Cabinet vous accompagne afin de protéger vos droits, votre réputation et vo
       });
     })();
 
-    // Horizontal Slider
-    (function() {
-      const slider = document.getElementById('horizontal-slider');
-      const dots = document.querySelectorAll('.slider-dot');
-      let currentSlide = 0;
-      const totalSlides = 3;
 
-      function goToSlide(index) {
-        currentSlide = index;
-        slider.style.transform = `translateX(-${index * 100}vw)`;
-        dots.forEach((dot, i) => {
-          dot.classList.toggle('active', i === index);
-        });
-      }
-
-      dots.forEach((dot, index) => {
-        dot.addEventListener('click', () => goToSlide(index));
-      });
-    })();
 
     // Scroll-triggered animations - matching Thibierge AOS pattern
     (function() {

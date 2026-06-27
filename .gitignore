@@ -1,0 +1,30 @@
+# OS
+Thumbs.db
+.DS_Store
+*.swp
+*.swo
+
+# IDE
+.vs/
+.vscode/
+.idea/
+
+# Playwright logs
+.playwright-mcp/
+
+# Temp/artifact files
+*.artifact.json
+*.artifact.yml
+
+# Scripts
+_fix*.ps1
+_fix*.py
+_fix*.js
+fix_enc.py
+fix_encode.js
+
+# Notes
+about project.md.txt
+
+# Skills cache
+.od-skills/

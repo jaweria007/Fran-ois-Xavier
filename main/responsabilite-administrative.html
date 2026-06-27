@@ -132,7 +132,7 @@
     }
     .btn-primary:hover { opacity: .88; }
 
-    /* Horizontal Slider */
+    /* Hero Section */
     .slider-section {
       position: relative;
       width: 100%;
@@ -140,23 +140,14 @@
       overflow: hidden;
       background: var(--bg);
     }
-    .horizontal-slider {
-      display: flex;
-      width: 300%;
-      height: 100%;
-      transition: transform 0.8s ease;
-    }
-    .horizontal-slider .slide {
-      width: 100vw;
-      height: 720px;
-      flex-shrink: 0;
-      position: relative;
-    }
-    .horizontal-slider .slide img {
+    .slider-section .hero-bg-img {
       width: 100%;
       height: 100%;
       object-fit: cover;
       object-position: center;
+      position: absolute;
+      inset: 0;
+      z-index: 0;
     }
     .slide-overlay {
       position: absolute;
@@ -192,29 +183,6 @@
       letter-spacing: 0.02em;
       text-align: center;
       white-space: nowrap;
-    }
-    .slider-dots {
-      display: flex;
-      justify-content: center;
-      gap: 12px;
-      position: absolute;
-      bottom: 40px;
-      left: 0;
-      right: 0;
-      z-index: 3;
-    }
-    .slider-dot {
-      width: 10px;
-      height: 10px;
-      border-radius: 50%;
-      border: 1.5px solid #C9A15A;
-      background: transparent;
-      cursor: pointer;
-      transition: background 0.3s ease, border-color 0.3s ease;
-      padding: 0;
-    }
-    .slider-dot.active {
-      background: #C9A15A;
     }
 
     /* Domaines d'intervention - Matching Thibierge.law reference */
@@ -401,9 +369,6 @@
       }
       .hero-etrangers-title {
         font-size: 28px;
-      }
-      .horizontal-slider .slide {
-        height: 300px;
       }
     }
 
@@ -1219,31 +1184,14 @@
   </header>
 
   <main id="content">
-    <!-- Horizontal Image Slider with Text Overlay -->
+    <!-- Hero Section -->
     <section class="slider-section" data-od-id="slider">
-      <div class="horizontal-slider" id="horizontal-slider">
-        <div class="slide">
-          <img src="mqoy2s1q-34efffd5f4f394be152a1e410f0a43b5.jpg" alt="Responsabilité administrative 1">
-          <div class="slide-overlay"></div>
-        </div>
-        <div class="slide">
-          <img src="mqoy2rua-RA.png" alt="Responsabilité administrative 2">
-          <div class="slide-overlay"></div>
-        </div>
-        <div class="slide">
-          <img src="mqhv98f2-Arche-Def.png" alt="Responsabilité administrative 3">
-          <div class="slide-overlay"></div>
-        </div>
-      </div>
+      <img class="hero-bg-img" src="mqoy2rua-RA.png" alt="Responsabilité administrative">
+      <div class="slide-overlay"></div>
       <div class="slider-text-overlay">
         <div class="slider-title-wrap">
           <h1 class="slider-title">Responsabilité administrative</h1>
         </div>
-      </div>
-      <div class="slider-dots" id="slider-dots">
-        <button class="slider-dot active" data-slide="0"></button>
-        <button class="slider-dot" data-slide="1"></button>
-        <button class="slider-dot" data-slide="2"></button>
       </div>
     </section>
 
@@ -1662,26 +1610,6 @@
       window.addEventListener('scroll', function() {
         if (window.scrollY > 40) { nav.classList.add('scrolled'); }
         else { nav.classList.remove('scrolled'); }
-      });
-    })();
-
-    // Horizontal Slider
-    (function() {
-      const slider = document.getElementById('horizontal-slider');
-      const dots = document.querySelectorAll('.slider-dot');
-      let currentSlide = 0;
-      const totalSlides = 3;
-
-      function goToSlide(index) {
-        currentSlide = index;
-        slider.style.transform = `translateX(-${index * 100}vw)`;
-        dots.forEach((dot, i) => {
-          dot.classList.toggle('active', i === index);
-        });
-      }
-
-      dots.forEach((dot, index) => {
-        dot.addEventListener('click', () => goToSlide(index));
       });
     })();
 

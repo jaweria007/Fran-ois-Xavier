@@ -1,8 +1,0 @@
-[    1292ms] TypeError: Cannot read properties of undefined (reading 'querySelector')
-    at file:///C:/Users/Logic%20saint/OneDrive/Documents/New%20folder/fxcornuot-avocat.html:1672:26
-[    6129ms] TypeError: Cannot read properties of undefined (reading 'classList')
-    at file:///C:/Users/Logic%20saint/OneDrive/Documents/New%20folder/fxcornuot-avocat.html:1680:23
-[   11133ms] TypeError: Cannot read properties of undefined (reading 'classList')
-    at file:///C:/Users/Logic%20saint/OneDrive/Documents/New%20folder/fxcornuot-avocat.html:1680:23
-[   16136ms] TypeError: Cannot read properties of undefined (reading 'classList')
-    at file:///C:/Users/Logic%20saint/OneDrive/Documents/New%20folder/fxcornuot-avocat.html:1680:23
